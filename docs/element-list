@@ -1,2 +1,3 @@
 module:conversor_alura_one
+cl.conversor.app
 cl.conversor.vista.cli

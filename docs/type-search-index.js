@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"cl.conversor.vista.cli","l":"ConversorCli"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"cl.conversor.vista.cli","l":"Color"},{"p":"cl.conversor.app","l":"Conversor"},{"p":"cl.conversor.vista.cli","l":"ConversorCli"},{"p":"cl.conversor.vista.cli","l":"LimpiarConsola"},{"p":"cl.conversor.vista.cli","l":"MenuPrincipal"}];updateSearchResults();
