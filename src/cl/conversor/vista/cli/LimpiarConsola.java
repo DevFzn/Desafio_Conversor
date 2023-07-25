@@ -2,7 +2,7 @@ package cl.conversor.vista.cli;
 
 /**
  * Interface to clear OS terminal screen, on case of IDE Console
- * it prints 80 new lines.
+ * it just prints 80 new lines.
  */
 public interface LimpiarConsola {
 

@@ -10,16 +10,22 @@ public class ConversorCli {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         LimpiarConsola.clear();
-        System.out.println(MenuPrincipal.saludo);
+        MenuPrincipal menu = new MenuPrincipal("Bienvenido al conversor de monedas");
+        System.out.println(menu.banner());
 
         int input = 1;
         while (input != 0) {
-            System.out.println(MenuPrincipal.menu_opcs());
+            System.out.println(menu.menu_opcs());
             System.out.print("Ingresa una opción\n --> ");
-            input = Integer.valueOf(entrada.nextShort());
-            LimpiarConsola.clear();
+            try {
+                input = Integer.valueOf(entrada.next());
+                LimpiarConsola.clear();
+            } catch (Exception e) {
+                LimpiarConsola.clear();
+                System.out.println(menu.banner(menu.error_in()));
+            }
         }
-        System.out.println("Finalizando conversor");
+        System.out.println(" = Aplicación Finalizada =");
         entrada.close();
         System.exit(0);
     }
