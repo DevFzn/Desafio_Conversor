@@ -5,7 +5,6 @@
 ## Primer Challenge Java
 
 Se solicita crear un conversor de divisas utilizando el lenguaje Java
-Las características solicitadas son las siguientes:
 
 ### Requerimientos
 
