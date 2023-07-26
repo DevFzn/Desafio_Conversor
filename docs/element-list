@@ -1,3 +1,4 @@
 module:conversor_alura_one
 cl.conversor.app
-cl.conversor.vista.cli
+cl.conversor.moneda
+cl.conversor.vista.tui

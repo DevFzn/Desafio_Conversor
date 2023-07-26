@@ -1,18 +1,24 @@
-package cl.conversor.vista.cli;
+package cl.conversor.vista.tui;
 
 import java.util.List;
 
 /**
- *  Class to create title, opts/menus Strings
+ *  Class to create formatted Strings
  */
 public class MenuPrincipal {
     public String titulo; 
-    public static final List<String> menu = List.of(
+    public final List<String> menu = List.of(
              "Salir",
-             "juan",
-             "roberto",
-             "pancracio",
-             "zerafin" + Color.RESET.code()
+             "CLP a USD",
+             "CLP a EUR",
+             "CLP a GBP",
+             "CLP a JPY",
+             "CLP a KRW",
+             "USD a CLP",
+             "EUR a CLP",
+             "GBP a CLP",
+             "JPY a CLP",
+             "KRW a CLP"
          );
     private static final String color_baner = Color.YELLOW.code();
     private static final String color_titulo = Color.CYAN.code();
@@ -20,6 +26,7 @@ public class MenuPrincipal {
     private static final String color_ind = Color.PURPLE.code();
     private static final String color_rst = Color.RESET.code();
     private static final String color_err = Color.RED.code();
+    private static final String color_conv = Color.BLACK_BKG.code()+Color.CYAN.code();
     private static final String mensaje_error = "¡Debes ingresar un número válido!";   
     public MenuPrincipal(String titulo) {
         this.titulo = titulo;
@@ -28,7 +35,7 @@ public class MenuPrincipal {
     /**
      * @return String   Banner String
      */
-    public String banner() {
+    public String baner() {
         int largo = this.titulo.length()+8;
         StringBuilder titulo = new StringBuilder();
         titulo.append(color_baner);
@@ -39,10 +46,10 @@ public class MenuPrincipal {
     }
     
     /**
-     * @param msj       Application Title
+     * @param mensaje   Application Title
      * @return String   Banner String
      */
-    public String banner(String mensaje) {
+    public String baner(String mensaje) {
         int largo = this.titulo.length()+8;
         StringBuilder titulo = new StringBuilder();
         titulo.append(color_baner);
@@ -57,21 +64,34 @@ public class MenuPrincipal {
      */
     public String menu_opcs() {
         int largo = this.titulo.length()+8;
-        int pad = 4;
+        int pad = 5;
         StringBuilder opciones = new StringBuilder();
         opciones.append(color_baner + "=".repeat(largo)
                         + "\n" + color_rst);
         opciones.append(color_opcs + "  Menu de opciones:\n\n");
         for (int i = 0; i < menu.size(); i++) {
             if (i!=0) {
-                opciones.append(" ".repeat(pad) + color_ind + i +") "
-                                + color_opcs + menu.get(i) + "\n");
+                opciones.append(
+                        color_ind + String.format("%1$"+(pad+2)+"s", i )
+                        +") " + color_opcs + menu.get(i) + "\n");
             }
         }
-        opciones.append(" ".repeat(pad) + color_err + "0) " + color_rst
+        opciones.append(" ".repeat(pad+1) + color_err + "0) " + color_rst
                         + color_opcs + menu.get(0) + "\n" + color_rst);
         opciones.append("\n" + color_baner + "=".repeat(largo) + color_rst);
         return opciones.toString();
+    }
+    
+    /**
+     * @return formatted String that represents result of currency conversion
+     */
+    public String resultado(String...datos) {
+        StringBuilder conversion = new StringBuilder();
+        conversion.append(baner("Conversion "+datos[0])+"\n\n"+color_conv);
+        conversion.append(datos[1] +" "+ datos[2] +" "+datos[3]+" .-\n");
+        conversion.append(datos[4] +" "+ datos[5] +" "+ datos[6]+" .-\n"+ color_rst);
+        return conversion.toString();
+        
     }
     
     /**

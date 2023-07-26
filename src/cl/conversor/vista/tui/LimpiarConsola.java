@@ -1,4 +1,4 @@
-package cl.conversor.vista.cli;
+package cl.conversor.vista.tui;
 
 /**
  * Interface to clear OS terminal screen, on case of IDE Console
