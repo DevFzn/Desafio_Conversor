@@ -12,6 +12,12 @@ public class ConversorTui {
     private static Scanner entrada = new Scanner(System.in);
     private static MenuPrincipal menu; 
 
+    /**
+     * @param orig (Moneda) origin
+     * @param dest (Moneda) target
+     * @param monto Double amount
+     * @return Double currency conversion 
+     */
     public static Double conversion(Moneda orig, Moneda dest, Double monto) {
         return orig.convert(dest, monto);
         
@@ -96,7 +102,7 @@ public class ConversorTui {
                 }
             } catch (Exception e) {
                 LimpiarConsola.clear();
-                e.printStackTrace();
+                //e.printStackTrace();
                 System.out.println(menu.baner(menu.error_in()));
             }
         }

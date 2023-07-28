@@ -22,10 +22,16 @@ public enum Moneda {
         this.rate = rate;
     }
     
+    /**
+     * @return Currency symbol
+     */
     public final String symbol() {
         return this.symbol;
     }
     
+    /**
+     * @return Currency rate
+     */
     public final BigDecimal rate() {
         return this.rate;
     }
