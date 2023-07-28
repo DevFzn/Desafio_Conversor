@@ -9,6 +9,34 @@ import cl.conversor.moneda.Moneda;
 public class ConversorCli {
 
     /**
+     * Main <b>CLI</b> application 
+     * @param args String[3] (currency, currency, amount)
+     */
+    public static void main(String[] args) {
+        String origen = "";
+        String destino = "";
+        Double monto = 0.0;
+        try {
+            if (esMoneda(args[0].toUpperCase())) {
+                origen = args[0].toUpperCase();
+            }
+            if (esMoneda(args[1].toUpperCase())) {
+                destino = args[1].toUpperCase();
+            }
+            monto = Double.valueOf(args[2]);
+            String resultado = conversion(Moneda.valueOf(origen), Moneda.valueOf(destino), monto).toString();
+            StringBuilder convert_repr = new StringBuilder();
+            convert_repr.append("\nConversion de "+origen+" "+Moneda.valueOf(origen).symbol());
+            convert_repr.append(" "+monto+" a "+destino+" "+Moneda.valueOf(destino).symbol());
+            convert_repr.append(" "+resultado+"\n");
+            System.out.println(convert_repr);
+        } catch (Exception e){
+              ayuda();
+        }
+        System.exit(0);
+    }
+
+    /**
      * @param orig Origin currency
      * @param dest Target currency
      * @param monto Amount of `orig` currency to convert into `dest` currency
@@ -39,38 +67,15 @@ public class ConversorCli {
         StringBuilder resultado = new StringBuilder();
         resultado.append("\n\nConversor de Monedas\n\n");
         resultado.append("USO\n    java -jar Conversor.jar <opcs>\n\n");
-        resultado.append("OPCIONES\n    GUI Mode - > java -jar Conversor\n");
-        resultado.append("    TUI Mode - > java -jar Conversor TUI\n");
-        resultado.append("    CLI Mode - > java -jar Conversor <MONEDA_ORIGEN> <MONEDA_DESTINO> <MONTO>\n");
-        resultado.append("             ej. java -jar Conversor CLP JPY 1000\n\n");
+        resultado.append("OPCIONES\n    GUI Mode - java -jar Conversor\n");
+        resultado.append("    TUI Mode - java -jar Conversor TUI\n");
+        resultado.append("    CLI Mode - java -jar Conversor <MONEDA_ORIGEN> <MONEDA_DESTINO> <MONTO>\n");
+        resultado.append("           ej. java -jar Conversor CLP JPY 1000\n\nMONEDAS\n   ");
+        for (Moneda moneda : Moneda.values()) {
+            resultado.append(" "+moneda.name()+" ");
+        }
+        resultado.append("");
         System.out.println(resultado.toString());
     }
 
-    /**
-     * Main <b>CLI</b> application 
-     * @param args String[3] (currency, currency, amount)
-     */
-    public static void main(String[] args) {
-        String origen = "";
-        String destino = "";
-        Double monto = 0.0;
-        try {
-            if (esMoneda(args[0].toUpperCase())) {
-                origen = args[0].toUpperCase();
-            }
-            if (esMoneda(args[1].toUpperCase())) {
-                destino = args[1].toUpperCase();
-            }
-            monto = Double.valueOf(args[2]);
-            String resultado = conversion(Moneda.valueOf(origen), Moneda.valueOf(destino), monto).toString();
-            StringBuilder convert_repr = new StringBuilder();
-            convert_repr.append("\nConversion de "+origen+" "+Moneda.valueOf(origen).symbol());
-            convert_repr.append(" "+monto+" a "+destino+" "+Moneda.valueOf(destino).symbol());
-            convert_repr.append(" "+resultado+"\n");
-            System.out.println(convert_repr);
-        } catch (Exception e){
-              ayuda();
-        }
-        System.exit(0);
-    }
 }
