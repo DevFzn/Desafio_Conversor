@@ -35,7 +35,7 @@ Añadir otros tipos de conversiones, ejm. temperatura
 
 </details>
 
-## Proyecto
+### Proyecto
 
 - [ ] Releases
 - [ ] [Conversor](./target/Conversor.jar).jar en desarrollo
@@ -46,14 +46,49 @@ Añadir otros tipos de conversiones, ejm. temperatura
 - [ ] Video
 - [ ] [Javadocs](https://devfzn.github.io/Desafio_Conversor/overview-tree.html)
 
-### Conversor de Monedas CLI
+## Conversor de Monedas CLI
 
-<a href="./media/conv_cli_ayuda.png"><img width="400" src="./media/conv_cli_ayuda.png"/></a>
-<a href="./media/conv_cli_ejm.png"><img width="400" src="./media/conv_cli_ejm.png"/>
+[<img src="./media/conv_cli_ayuda.png" width="400"/>](./media/conv_cli_ayuda.png)
+[<img src="./media/conv_cli_ejm.png" width="400"/>](./media/conv_cli_ejm.png)
 
-### Conversor de Monedas TUI
+## Conversor de Monedas TUI
 
-<a href="./media/conv_tui_menu.png"><img width="400" src="./media/conv_tui_menu.png"/>
-<a href="./media/conv_tui_ejm.png"><img width="400" src="./media/conv_tui_ejm.png"/>
+[<img src="./media/conv_tui_menu.png" width="400"/>](./media/conv_tui_menu.png)
+[<img src="./media/conv_tui_ejm.png" width="400"/>](./media/conv_tui_ejm.png)
 
-### Conversor de monedas GUI
+## Conversor de monedas GUI
+
+<!--
+[comment]: # ([<img src="./media/conv_gui_menu.png" width="400"/>](./media/conv_gui_menu.png))
+[comment]: <> ([<img src="./media/conv_gui_ejm.png" width="400"/>](./media/conv_gui_ejm.png))
+-->
+
+----
+
+#### Requerimientos
+
+- Jar
+  - Java JRE 17 o superior
+- Source
+  - Java JDK 17 o superior
+  - Eclipse IDE 2023-06 (4.28.0) o superior
+
+#### Instrucciones
+
+- **Correr applicacion desde el IDE**
+
+  Desde archivo `Conversor.java` del package `cl.conversor.app`
+
+- **Correr `Conversor.jar`**
+
+  ```sh
+  # GUI
+  java -jar Conversor.jar
+
+  # TUI
+  java -jar Conversor.jar TUI
+
+  # CLI
+  java -jar Conversor.jar USD EUR 1234.5678
+  java -jar Conversor.jar ayuda
+  ```

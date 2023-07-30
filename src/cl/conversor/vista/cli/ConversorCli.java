@@ -17,10 +17,10 @@ public class ConversorCli {
         String destino = "";
         Double monto = 0.0;
         try {
-            if (esMoneda(args[0].toUpperCase())) {
+            if (Moneda.esMoneda(args[0].toUpperCase())) {
                 origen = args[0].toUpperCase();
             }
-            if (esMoneda(args[1].toUpperCase())) {
+            if (Moneda.esMoneda(args[1].toUpperCase())) {
                 destino = args[1].toUpperCase();
             }
             monto = Double.valueOf(args[2]);
@@ -44,20 +44,6 @@ public class ConversorCli {
      */
     public static Double conversion(Moneda orig, Moneda dest, Double monto) {
         return orig.convert(dest, monto);
-    }
-
-    /**
-     * Check if `value` is part of enum Moneda
-     * @param value String currency
-     * @return true if value is an enum Moneda, otherwise returns false
-     */
-    public static boolean esMoneda(String value) {
-        for (Moneda e : Moneda.class.getEnumConstants()) {
-            if(e.name().equals(value)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**

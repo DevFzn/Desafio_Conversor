@@ -7,12 +7,12 @@ import java.math.MathContext;
  * Moneda currency representation `NAME (symbol, rate)`  
  */
 public enum Moneda {
-    USD ("$", new BigDecimal("1")),
-    CLP ("$", new BigDecimal("827.786512")),
-    EUR ("€", new BigDecimal("0.904528")),
-    GBP ("£", new BigDecimal("0.775054")),
-    JPY ("¥", new BigDecimal("140.92065996")),
-    KRW ("₩", new BigDecimal("1276.580533"));
+    USD ("\uf155", new BigDecimal("1")),
+    CLP ("\uf155", new BigDecimal("827.786512")),
+    EUR ("\uf153", new BigDecimal("0.904528")),
+    GBP ("\uf154", new BigDecimal("0.775054")),
+    JPY ("\uffe5", new BigDecimal("140.92065996")),
+    KRW ("\uf159", new BigDecimal("1276.580533"));
 
     private final String symbol;
     private final BigDecimal rate;
@@ -56,5 +56,19 @@ public enum Moneda {
         BigDecimal monto_orig = new BigDecimal(monto);
         monto_orig = getBase(monto_orig);
         return  Double.valueOf((monto_orig.multiply(destino.rate(), new MathContext(7)).toString()));
+    }
+    
+    /**
+     * Check if `value` is part of enum Moneda
+     * @param value String currency
+     * @return true if value is an enum Moneda, otherwise returns false
+     */
+    public final static boolean esMoneda(String value) {
+        for (Moneda e : Moneda.class.getEnumConstants()) {
+            if(e.name().equals(value)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
