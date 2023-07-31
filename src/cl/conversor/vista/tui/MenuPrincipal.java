@@ -87,9 +87,10 @@ public class MenuPrincipal {
      */
     public String resultado(String...datos) {
         StringBuilder conversion = new StringBuilder();
-        conversion.append(baner("Conversion "+datos[0])+"\n\n"+color_conv);
-        conversion.append(datos[1] +" "+ datos[2] +" "+datos[3]+" .-\n");
-        conversion.append(datos[4] +" "+ datos[5] +" "+ datos[6]+" .-\n"+ color_rst);
+        conversion.append(baner("Conversion "+datos[0])+"\n\n    "+color_conv);
+        conversion.append(datos[1] +" "+ datos[2] +" "+ datos[3] +" .-\n"+ color_rst);
+        conversion.append("    "+ color_conv +  datos[4] +" "+ datos[5] +" "+ datos[6]);
+        conversion.append(" .-"+ color_rst +"\n");
         return conversion.toString();
         
     }

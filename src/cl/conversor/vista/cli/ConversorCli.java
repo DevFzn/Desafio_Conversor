@@ -24,11 +24,12 @@ public class ConversorCli {
                 destino = args[1].toUpperCase();
             }
             monto = Double.valueOf(args[2]);
-            String resultado = conversion(Moneda.valueOf(origen), Moneda.valueOf(destino), monto).toString();
+            String resultado;
+            resultado = Moneda.monedaString(conversion(Moneda.valueOf(origen), Moneda.valueOf(destino), monto));
             StringBuilder convert_repr = new StringBuilder();
-            convert_repr.append("\nConversion de "+origen+" "+Moneda.valueOf(origen).symbol());
-            convert_repr.append(" "+monto+" a "+destino+" "+Moneda.valueOf(destino).symbol());
-            convert_repr.append(" "+resultado+"\n");
+            convert_repr.append("\nConversion de "+ origen +" "+ Moneda.valueOf(origen).symbol());
+            convert_repr.append(" "+ Moneda.monedaString(monto) +" a "+destino+" ");
+            convert_repr.append(Moneda.valueOf(destino).symbol()+" "+resultado+"\n");
             System.out.println(convert_repr);
         } catch (Exception e){
               ayuda();

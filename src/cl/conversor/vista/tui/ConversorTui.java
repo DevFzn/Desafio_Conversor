@@ -40,10 +40,10 @@ public class ConversorTui {
         String datos_conversion = menu.resultado( titulo,
                                                   orig.toString(),
                                                   orig.symbol(),
-                                                  monto.toString(),
+                                                  Moneda.monedaString(monto),
                                                   dest.toString(),
                                                   dest.symbol(),
-                                                  orig.convert(dest, monto).toString());
+                                                  Moneda.monedaString(orig.convert(dest, monto)));
         System.out.println(datos_conversion);
     }
     

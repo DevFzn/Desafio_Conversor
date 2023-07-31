@@ -2,6 +2,7 @@ package cl.conversor.moneda;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.text.DecimalFormat;
 
 /**
  * Moneda currency representation `NAME (symbol, rate)`  
@@ -21,7 +22,7 @@ public enum Moneda {
         this.symbol = symbol;
         this.rate = rate;
     }
-    
+
     /**
      * @return Currency symbol
      */
@@ -42,7 +43,7 @@ public enum Moneda {
      * @return BigDecimal base value
      */
     public final BigDecimal getBase(BigDecimal monto) {
-        MathContext mc = new MathContext(7);
+        MathContext mc = new MathContext(20);
         return monto.divide(this.rate(),mc);
     }
     
@@ -55,7 +56,10 @@ public enum Moneda {
     public final Double convert(Moneda destino, Double monto) {
         BigDecimal monto_orig = new BigDecimal(monto);
         monto_orig = getBase(monto_orig);
-        return  Double.valueOf((monto_orig.multiply(destino.rate(), new MathContext(7)).toString()));
+        return Double.valueOf(
+                    monto_orig.multiply(
+                            destino.rate(), new MathContext(20)).toString()
+                );
     }
     
     /**
@@ -70,5 +74,17 @@ public enum Moneda {
             }
         }
         return false;
+    }
+
+    /**
+     * Returns String representation of Double `monto`
+     * @param monto Double amount for String representation
+     * @return String representation of `monto`
+     */
+    public final static String monedaString(Double monto) {
+        DecimalFormat decFormat = new DecimalFormat();
+        decFormat.setMaximumFractionDigits(5);
+        decFormat.setMinimumFractionDigits(0);
+        return decFormat.format(monto);
     }
 }
