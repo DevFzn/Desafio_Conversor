@@ -12,7 +12,7 @@ public enum Moneda {
     CLP ("\uf155", new BigDecimal("827.786512")),
     EUR ("\uf153", new BigDecimal("0.904528")),
     GBP ("\uf154", new BigDecimal("0.775054")),
-    JPY ("\uffe5", new BigDecimal("140.92065996")),
+    JPY ("\uf157", new BigDecimal("140.92065996")),
     KRW ("\uf159", new BigDecimal("1276.580533"));
 
     private final String symbol;

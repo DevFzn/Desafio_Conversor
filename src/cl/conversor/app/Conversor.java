@@ -1,6 +1,8 @@
 /**
- * Currency converter for Alura Challenge - G5 ONE 
+ * Converter application for Alura Challenge #2 - G5 ONE
+ * @version 0.1
  * @author DevFzn
+ * @email devfzn@proton.me
  */
 package cl.conversor.app;
 
