@@ -6,7 +6,6 @@
 
 Se solicita crear un conversor de divisas utilizando el lenguaje Java
 
-
 <details>
 <summary><b><font size="+2">Requerimientos de la aplicación</font></b></summary>
 
@@ -47,20 +46,16 @@ Utilice el método **showMessageDialog** para validar la entrada para que no se
 acepten caracteres no numéricos.
 - [x] Mostrar al usuario el valor de la conversión realizada.
   - [x] Utilice el método **showMessageDialog** para mostrar el valor de la conversión.
-- [ ] Utilice el método **showConfirmDialog** para preguntar al usuario si desea
+- [x] Utilice el método **showConfirmDialog** para preguntar al usuario si desea
 continuar usando el programa presentando las siguientes opciones:
-  - [ ] **Yes**: Debe llevar nuevamente a nuestro usuario a menu principal para
+  - [x] **Yes**: Debe llevar nuevamente a nuestro usuario a menu principal para
   escoger una opción de conversión
-  - [ ] **No**: Debe mostrar un mensaje de "Programa Finalizado"
-  - [ ] **Cancel**: Debe mostrar un mensaje de "Programa Finalizado"
-- [ ] Si el usuario selecciona la opción **No** o **Cancel** utilice
+  - [x] **No**: Debe mostrar un mensaje de "Programa Finalizado"
+  - [x] **Cancel**: Debe mostrar un mensaje de "Programa Finalizado"
+- [x] Si el usuario selecciona la opción **No** o **Cancel** utilice
 **showMessageDialog** para que pueda cerrar el programa. con el mensaje
 ***"Programa Terminado"***
-- [ ] **Extra**: Después de que el usuario haga clic en continuar en el programa,
-presente el cuadro de opciones de conversión para que pueda verificar otro valor
-en una moneda diferente.  
-Realiza más de un programa de conversión, además de moneda, puede ser
-temperatura, distancia, velocidad, entre otros.
+- [x] **Extra** Personal: Crear 3 versiones de la aplicación, **cli, tui y gui**
 
 </details>
 
@@ -79,14 +74,9 @@ Doc
 
 ### Proyecto
 
-- [ ] Releases
-- [ ] [Conversor](./target/Conversor.jar).jar en desarrollo
-- [ ] Imagenes
-   - [x] Version CLI
-   - [x] Version TUI
-   - [ ] Version GUI
-- [ ] Video
-- [ ] [Javadocs](https://devfzn.github.io/Desafio_Conversor/overview-tree.html)
+[Javadocs](https://devfzn.github.io/Desafio_Conversor/overview-tree.html) -
+Documentación en GitHub pages.  
+Aplicación [Conversor.jar](./target/Conversor.jar)
 
 ## Conversor de Monedas CLI
 
@@ -100,10 +90,8 @@ Doc
 
 ## Conversor de monedas GUI
 
-<!--
-([<img src="./media/conv_gui_menu.png" width="400"/>](./media/conv_gui_menu.png))
-([<img src="./media/conv_gui_ejm.png" width="400"/>](./media/conv_gui_ejm.png))
--->
+[<img src="./media/conv_gui_monto.png" width="400"/>](./media/conv_gui_monto.png)
+[<img src="./media/conv_gui_result.png" width="400"/>](./media/conv_gui_result.png)
 
 ----
 
@@ -121,7 +109,7 @@ Doc
 
   Desde archivo `Conversor.java` del package `cl.conversor.app`
 
-- Para correr el **Conversor.jar**
+- Para correr el [Conversor.jar](./target/Conversor.jar)
 
   ```sh
   # GUI
@@ -134,3 +122,8 @@ Doc
   java -jar Conversor.jar USD EUR 1234.5678
   java -jar Conversor.jar ayuda
   ```
+
+### Demo de la aplicación
+
+[![Ver demo](https://img.youtube.com/vi/kkegtT6bQTU/hqdefault.jpg)](https://www.youtube.com/embed/kkegtT6bQTU)
+

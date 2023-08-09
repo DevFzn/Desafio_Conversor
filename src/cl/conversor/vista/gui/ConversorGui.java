@@ -21,13 +21,13 @@ import javax.swing.SwingUtilities;
 public class ConversorGui extends JFrame {
 
     private static final long serialVersionUID = 1L;
-    private JMenuBar menuBar;
-    private JMenu menu;
-    private JMenuItem opcion0;
-    private JMenuItem opcion1;
-    private JMenuItem opcion2;
+    private static JMenuBar menuBar;
+    private static JMenu menu;
+    private static JMenuItem opcion0;
+    private static JMenuItem opcion1;
+    private static JMenuItem opcion2;
 
-    public ConversorGui() {
+    private ConversorGui() {
 
         try {
             ImageIcon icono = new ImageIcon(getClass().getResource("/imagenes/logo_green.png"));
@@ -49,8 +49,8 @@ public class ConversorGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(
-                        menuBar.getParent(), "Finalizando conversor",
-                        "Cerrando aplicación", JOptionPane.INFORMATION_MESSAGE);
+                        menuBar.getParent(), "Cerrando aplicación",
+                        "Conversor finalizado", JOptionPane.INFORMATION_MESSAGE);
                 System.exit(0);
             }
         });
@@ -58,16 +58,17 @@ public class ConversorGui extends JFrame {
         opcion1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.remove(menuBar);
-                panel.add(ConversorMoneda.menuConversion());
-                add(panel);
-                panel.revalidate();
+                ConversorMoneda.main(null);
+                dispose();
             }
         });
 
     }
     
-    private void menuPrincipal() {
+    /**
+     * Main menu with conversion choices and exit option
+     */
+    private static void menuPrincipal() {
         menuBar = new JMenuBar();
         menu = new JMenu("Elige una opción");
         menu.setMnemonic('e');
